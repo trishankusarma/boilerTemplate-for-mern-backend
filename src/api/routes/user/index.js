@@ -8,15 +8,15 @@ const {
 const router = new express.Router()
 
 /* @get */
-router.get('/', getUser)
+router.get('/:_id', getUser)
 
 /* @post */
 router.post('/', createUser)
 
 /* @patch */
-router.patch('/', updateUser)
+router.patch('/:_id', updateUser)
 
 /* @delete */
-router.delete('/', deleteUser)
+router.delete('/:_id', deleteUser)
 
 module.exports = router
