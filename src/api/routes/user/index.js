@@ -2,21 +2,17 @@ const express = require('express')
 
 const { userController } = require('../../controllers')
 const { 
-   createUser, getUser, updateUser, deleteUser
+   googleAuthUrl, googleCallBack
 } = userController
 
 const router = new express.Router()
 
-/* @get */
-router.get('/:_id', getUser)
+//get google auth url
+// 1)
+router.get('/googleAuthUrl' , googleAuthUrl)
 
-/* @post */
-router.post('/', createUser)
-
-/* @patch */
-router.patch('/:_id', updateUser)
-
-/* @delete */
-router.delete('/:_id', deleteUser)
+//get google callback
+// 2)
+router.get("/google/callback", googleCallBack )
 
 module.exports = router

@@ -2,7 +2,8 @@ const app = require('./api/app')
 const http = require('http')
 const chalk = require('chalk')
 
-require('./db')
+require('./db')();
+
 const {
     PORT,
     AUTHOR

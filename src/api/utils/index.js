@@ -1,3 +1,4 @@
 module.exports = {
-    serverError : require('./serverError')
+    serverError : require('./serverError'),
+    googleAuth : require("./googleAuth")
 }

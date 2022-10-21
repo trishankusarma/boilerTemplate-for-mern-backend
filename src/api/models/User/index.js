@@ -19,7 +19,16 @@ const userSchema = Schema({
     password:{
         type: String,
         required: true
-    }
+    },
+    dailyStepCount:[{
+        
+         date :{
+            type : Date
+         },
+         steps: {
+            type : Number
+         }
+    }]
 })
 
 // methods and statics

@@ -6,15 +6,15 @@ const {
     MONGO_URL
 } = process.env
 
-mongoose.connect(MONGO_URL, options)
+function connection() {
+    return mongoose
+        .connect(MONGO_URL, options)
+        .then((result) => {
+            logger.info("SERVER", 'Mongo Connected');
+        })
+        .catch((error) => {
+            logger.error("SERVER", error.message, error);
+        });
+}
 
-const db = mongoose.connection;
-  
-db.on('error', (error) => {
-    logger.error('SERVER', error.message, error);
-})
-  
-db.once('open', () => {
-    
-    logger.info('SERVER', 'Mongo Connected');
-})
+module.exports = connection;
